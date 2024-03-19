@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Trang Danh sách Kỳ thi</title>
+      <link rel="stylesheet" href="styles/dashboard.css">
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-logo">
+          <img src = "https://portal.ptit.edu.vn/wp-content/uploads/2016/04/ptit-logo.png" onclick = "validateLogin()">
+      </div>
+      <div class="nav-menu" id="navMenu">
+          <ul>
+              <li><a href="#" class="link active" id = "js-dashboard-page" onclick = "otherPages()">Dashboard Admin</a></li>
+              <li><a href="#" class="link" id = "js-customize-page" onclick = "otherPages()">Trang tạo/Chỉnh sửa kì thi</a></li>
+              <li><a href="#" class="link" id = "js-stats-page" onclick = "otherPages()">Trang thống kê</a></li>
+              <li><a href="#" class="link" id = "js-results-page" onclick = "otherPages()">Trang xem kết quả của từng sinh viên</a></li>
+          </ul>
+      </div>
+      <div class="nav-button">
+          <p>Xin chào <span class = "admin-name">Admin1</span></p>
+      </div>
+      <div class="nav-menu-btn">
+          <i onclick="myMenuFunction()"><img class = "menu-icon" src = "images/menu.png"></i>
+      </div>
+  </nav>
+  
+  <section class = "main">
+    <div class="title">
+      <h2 class="section-title">Overview</h2>
+      <select name="date" id="date" class="dropdown">
+          <option value="today">Today</option>
+          <option value="lastweek">Last Week</option>
+          <option value="lastmonth">Last Month</option>
+          <option value="lastyear">Last Year</option>
+          <option value="alltime">All Time</option>
+      </select>
+    </div>
+    
+    <div class = "card-grid">
+      <div class = "frame">
+        <div class = "card-preview-grid">
+          <div class = "card-stats">
+            <div class = "card-number">
+              1000
+            </div>
+            <div class = "card-info">
+              Tổng sinh viên tham gia
+            </div>
+          </div>
+          <div class = "card-preview">
+            <img class = "student-picture" src = "images/student.png">
+          </div> 
+        </div> 
+      </div>
+        
+      <div class = "frame">
+        <div class = "card-preview-grid">
+          <div class = "card-stats">
+            <div class = "card-number-participant">
+              70%
+            </div>
+            <div class = "card-number-overall-participant">
+              Tỷ lệ tham gia
+            </div>
+          </div>
+          <div class = "card-preview">
+            <img class = "chart-picture" src = "images/chart.png">
+          </div> 
+        </div> 
+      </div>
+      
+      <div class = "frame">
+        <div class = "card-preview-grid2">
+          <div class = "card-stats">
+            <div class = "avg-score-title">
+              Điểm trung bình
+            </div>
+            <div class = "avg-score-number">
+              7.6
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>  
+
+    <h2 class = "management-test-title">Quản lí danh sách các kỳ thi</h2>
+    <div class="testing-input-grid">
+      <input placeholder="Tên kì thi"
+        class="js-testing-name-input testing-name-input">
+      <input type="date"
+        class="js-due-date-input due-date-input">
+      <button onclick="
+        addTesting();
+      " class="add-testing-button">Thêm</button>
+    </div>
+
+    <div class="js-testing-list testing-grid"></div>
+
+    <h2 class = "management-test-title">Quản lí danh sách người dùng</h2>
+    <div class="user-input-grid">
+      <input placeholder="Tên người dùng"
+      class="js-username-input username-input">
+      <input placeholder="Tên kì thì tham gia"
+      class="js-nameTesting-input nameTesting-input">
+      <input placeholder="Điểm số"
+      class="js-score-input score-input">
+      <input type="date"
+        class="js-dob-input dob-input">
+      <button onclick="
+        addUser();
+      " class="add-user-button">Thêm</button>
+    </div>
+
+    <div class="js-user-list user-grid"></div>
+
+    <script src="scripts/dashboard.js"></script>
+  </section>
+</body>
+</html>

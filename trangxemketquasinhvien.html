@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles/trangxemketquasinhvien.css">
+  
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="scripts/trangxemketquasinhvien.js"></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">
+            <img src = "https://portal.ptit.edu.vn/wp-content/uploads/2016/04/ptit-logo.png" onclick = "validateLogin()">
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+              <li><a href="#" class="link" id = "js-dashboard-page" onclick = "otherPages()">Dashboard Admin</a></li>
+              <li><a href="#" class="link" id = "js-customize-page" onclick = "otherPages()">Trang tạo/Chỉnh sửa kì thi</a></li>
+              <li><a href="#" class="link" id = "js-stats-page" onclick = "otherPages()">Trang thống kê</a></li>
+              <li><a href="#" class="link active" id = "js-results-page" onclick = "otherPages()">Trang xem kết quả của từng sinh viên</a></li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <p>Xin chào <span class = "admin-name">Admin1</span></p>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"><img class = "menu-icon" src = "images/menu.png"></i>
+        </div>
+    </nav>
+
+  <div id="searchContainer">
+    <input type="text" id="searchInput" onkeypress="handleKeyPress(event)">
+    <button onclick="searchStudent()">Tìm kiếm</button>
+  </div>
+
+  <div id="studentDetails"></div>
+  <table id="examResults" style="display: none;">
+    <thead>
+      <tr>
+        <th>Kỳ thi</th>
+        <th>Điểm số</th>
+        <th>Trạng thái</th>
+        <th>Thời gian tham gia</th>
+        <th>Chi tiết</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div id="questionDetails" style="display: none;"></div>
+  <button class="export-button" onclick="exportToExcel()">Xuất Excel</button>
+</body>
+</html>

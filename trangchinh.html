@@ -1,0 +1,45 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="styles/trangchinh.css">
+        <title>Trang Chính</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav class="nav">
+                <div class="nav-logo">
+                    <img src = "https://portal.ptit.edu.vn/wp-content/uploads/2016/04/ptit-logo.png"  onclick = "validateLogin()">
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <ul >
+                        <li ><a href="#" class="link active" id = "js-main-page" onclick = "otherPages()">Trang chính</a></li>
+                        <li ><a href="#" class="link" id = "js-testing-page" onclick = "otherPages()">Trang bài thi</a></li>
+                        <li ><a href="#" class="link" id = "js-result-page" onclick = "otherPages()">Trang kết quả</a></li>
+                    </ul>
+                </div>      
+                <div class="nav-menu-btn">
+                    <i onclick="myMenuFunction()"><img class = "menu-icon" src = "images/menu.png"></i>
+                </div>        
+            </nav>
+        
+            <div class="container">
+                
+                <h1>Danh sách kỳ thi</h1>
+                <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+                <select id="statusFilter">
+                  <option value="all">Tất cả</option>
+                  <option value="free">Truy cập tự do</option>
+                  <option value="scheduled">Yêu cầu thời gian cụ thể</option>
+                </select>
+
+                <ul id="examList"></ul>
+              </div>
+
+              <script src="scripts/trangchinh.js"></script>
+    </body>
+</html>
